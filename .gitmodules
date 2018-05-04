@@ -1,0 +1,4 @@
+[submodule "amc-pico8-driver"]
+	path = amc-pico8-driver
+	url = https://github.com/icshwi/amc-pico8-driver
+	ignore = all
