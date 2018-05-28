@@ -16,6 +16,12 @@ $ make install
 ```sh
 $ make modules
 $ make modules_install
-$ make modules_clean
+$ make setup
 ```
+
+```sh
+$ make modules_clean
+$ amke set_clean
+```
+
 Note that this is not valid for the cross-compiler. 

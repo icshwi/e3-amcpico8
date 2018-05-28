@@ -1,4 +1,6 @@
 
+modules_all: modules modules_install setup
+modules_distclean: modules_clean setup_clean
 
 modules:
 	$(MAKE) -C $(E3_KMOD_SRC_PATH) .config
@@ -7,11 +9,20 @@ modules:
 
 # Always SUDO is needed
 modules_install:
-	sudo -E bash -c "$(MAKE) -C $(E3_KMOD_SRC_PATH) install"
+	sudo -E bash -c "$(MAKE) -C $(E3_KMOD_SRC_PATH) $@"
 
 modules_clean: 
-	sudo -E bash -c "$(MAKE) -C $(E3_KMOD_SRC_PATH) clean"
+	$(MAKE) -C $(E3_KMOD_SRC_PATH) clean
 
 
-.PHONY: modules_build modules_install modules_clean
+setup:
+	sudo -E bash -c "$(MAKE) -C $(E3_KMOD_SRC_PATH) kmod_setup"
+
+
+setup_clean:
+	sudo -E bash -c "$(MAKE) -C $(E3_KMOD_SRC_PATH) kmod_clean"
+	
+
+.PHONY: modules_all modules_distclean modules modules_install modules_clean setup setup_clean
+
 
