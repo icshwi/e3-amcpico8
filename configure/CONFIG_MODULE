@@ -26,6 +26,8 @@ E3_MODULE_NAME:=$(EPICS_MODULE_NAME)
 E3_MODULE_SRC_PATH:=amc-pico8-driver
 E3_MODULE_MAKEFILE:=$(EPICS_MODULE_NAME).Makefile
 
+E3_KMOD_SRC_PATH:=$(E3_MODULE_SRC_PATH)
+
 
 # The definitions shown below can also be placed in an untracked CONFIG_MODULE.local
 -include $(TOP)/configure/CONFIG_MODULE.local
